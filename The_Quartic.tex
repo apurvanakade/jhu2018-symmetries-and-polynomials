@@ -1,0 +1,68 @@
+%!TEX root = index.tex
+\section{Solving the Quartic}
+\epigraph{The purpose of computation is insight, not numbers.}{Richard Hamming}
+
+Moving on to the fourth degree, the idea is the same. The method gets much more complicated, and isn't quite useful in practice. You should aim at understanding the ideas and move on.
+
+Consider a \emph{depressed quartic} with roots $ \gamma_1, \gamma_2, \gamma_3, \gamma_4$: 
+\begin{align*}
+  P(x) = x^4 + a_2 x^2 + a_1 x + a_0
+\end{align*}
+As before, to simplify the calculations we're forcing $$ 0 =\gamma_1+ \gamma_2+ \gamma_3+ \gamma_4$$
+If $ a_0 = 0$ we can factor out an $ x$ and reduce the quartic to a cubic. So we'll assume this is not the case.
+\begin{questions}
+  \item Express $ a_2, a_1, a_0$ in terms of $ \gamma_1, \gamma_2, \gamma_3, \gamma_4$.
+\end{questions}
+We need to find an intermediate third degree polynomial with roots $ \lambda_1, \lambda_2, \lambda_3$ which have \emph{fewer} symmetries than $ a_2, a_1, a_0$.
+
+... and here they are: 
+  \begin{align*}
+    \lambda_1 &= \gamma_1 \gamma_2 + \gamma_3 \gamma_4 \\
+    \lambda_2 &= \gamma_1 \gamma_3 + \gamma_2 \gamma_4 \\
+    \lambda_3 &= \gamma_1 \gamma_4 + \gamma_2 \gamma_3 
+  \end{align*}
+\begin{questions}[resume]
+  \item \begin{enumerate}
+    \item How many ways are there to permute the 4 roots $ \gamma_1, \gamma_2, \gamma_3, \gamma_4$?
+    \item Of these, which permutations leave \emph{all} the $\lambda_i$'s unchanged?
+    \item What do the rest of the permutations do to the $\lambda_i$'s?
+    \item Conclude that $\lambda_1 + \lambda_2 + \lambda_3$, $\lambda_1\lambda_2 + \lambda_2\lambda_3 + \lambda_3\lambda_1$ and $\lambda_1 \lambda_2 \lambda_3$ are symmetric in $ \gamma_1, \gamma_2, \gamma_3, \gamma_4$.
+  \end{enumerate}
+\end{questions}
+
+
+\newpage
+By the previous exercise the coefficients of the cubic polynomial whose roots are $ \lambda_1, \lambda_2, \lambda_3$ are polynomials in  $ a_2, a_1, a_0$.
+\begin{questions}[resume]
+  \item Verify the following identities (only for the intrepid)
+    \begin{align*}
+      a_2 &= \lambda_1 +\lambda_2 +\lambda_3\\
+      -4 a_0 &= \lambda_1\lambda_2 +\lambda_1 \lambda_3 + \lambda_2 \lambda_3\\
+      a_1^2 - 4a_0 a_2&=\lambda_1 \lambda_2 \lambda_3
+    \end{align*}
+    and hence $ \lambda_1, \lambda_2, \lambda_3$ are the roots of
+    \begin{align*}
+      R(x) = x^3 - a_2 x^2 - 4a_0x + (4a_0 a_2 - a_1^2)
+    \end{align*}
+\end{questions}
+
+Thus we've reduced the problem from a quartic to a cubic. The last step is recovering $ \gamma_1, \gamma_2, \gamma_3, \gamma_4$ from $ \lambda_1, \lambda_2, \lambda_3$. For this notice that 
+  \begin{align*}
+    \lambda_1 &= \gamma_1 \gamma_2 + \gamma_3 \gamma_4 \\
+    a_0 &= \gamma_1 \gamma_2 \gamma_3 \gamma_4
+  \end{align*}
+and hence $ \gamma_1 \gamma_2$ and $ \gamma_3 \gamma_4$ are the roots of the quadratic $x^2 - \lambda_1 x + a_0$. Similarly for the others.  We have the identities
+  \begin{align*}
+    \lambda_1^2 = (\lambda_1\lambda_2).(\lambda_1\lambda_3).(\lambda_1\lambda_4)/a_0
+  \end{align*}
+which we can use to find $ \lambda_1^2$ and then test the two possible square roots to see which one works. The other $ \lambda_i$'s can be found by inspection.
+
+\begin{questions}[resume]
+  \item Find the roots of the following polynomials:
+    \begin{enumerate}
+      \item $x^4 - 1$
+      \item $x^4 + 1$
+    \end{enumerate}
+\end{questions}
+
+

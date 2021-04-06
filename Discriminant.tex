@@ -1,0 +1,241 @@
+%!TEX root = index.tex
+
+\section{The Discriminant}
+\epigraph{In mathematics you don't understand things. You just get used to them.}{John von Neumann}
+
+We'll start by analyzing polynomials using good old calculus. There is an algebraic invariant, called the \emph{discriminant}, that has a geometric interpretation coming from calculus on one hand and an algebraic interpretation coming from the properties of the roots of the polynomials on the other.\\
+
+The \textbf{discriminant of a polynomial} is a number which can be computed using only the coefficients of the polynomial and which is 0 precisely when the polynomial has repeated roots. There is no reason, a priori, to expect that such an number should exist but it does, and you've encountered it already for the quadratic equation.
+
+
+
+
+
+
+\subsection{Quadratic}
+	
+Let us start with the simplest case. Consider the quadratic polynomial $ x^2 + bx + c$ with roots $ \alpha_1$ and $ \alpha_2$.
+\begin{questions}
+  \item Express $ b, c$ in terms of $ \alpha_1, \alpha_2$.
+\end{questions}
+\begin{questions}[resume]
+	\item What are the conditions on the coefficients $ b,c$ under which
+	\begin{enumerate}
+		\item $ \alpha_1 = \alpha_2$,
+		\item $ \alpha_1, \alpha_2$ are both real,
+		\item $ \alpha_1, \alpha_2$ are both non-real.
+	\end{enumerate}
+	Is it possible for exactly one of $ \alpha_1$ and $ \alpha_2$ to be real?
+\end{questions}
+Note that the answers to these questions depend on a single number. This number, denoted $ \Delta$ (delta), is called the \textbf{discriminant} of the quadratic polynomial. 
+	\begin{questions}[resume]
+		  \item Express the discriminant $ \Delta$ in terms of $ \alpha_1, \alpha_2$.		
+	\end{questions}
+
+\newpage
+\subsection{Cubic}
+Moving on to the next degree, consider the following cubic with roots $ \beta_1, \beta_2, \beta_3$.
+\begin{align*}
+	P(x) = x^3 + a_2 x^2 + a_1 x + a_0
+\end{align*}
+\begin{questions}
+	\item Express $ a_2, a_1, a_0$ explicitly in terms of $ \beta_1, \beta_2, \beta_3$.
+\end{questions}
+We'll first get rid of the coefficient on $ x^2$ to simplify our computations.
+\begin{questions}[resume]
+	\item \begin{enumerate}
+		\item Find the coefficients of the polynomial $ P_k(x)$ whose roots are $$ \beta_1 + k, \beta_2 + k, \beta_3 + k$$ where $ k$ is a constant, in terms of the coefficients of $ P(x)$.
+		\item Find the value of $ k$ for which the coefficient of $ x^2$ in $ P_k(x)$ is 0.
+	\end{enumerate}
+	The value of $ k$ only depends on the coefficients of $ P(x)$ and hence we can simplify our polynomial \textbf{without knowing the roots}.
+	\begin{enumerate}[resume]
+		\item For the polynomial $ P(x) = x^3 + 3x^2 + 1$ use find the polynomial $ P_k(x)$ whose $ x^2$ coefficient is 0. What is the relationship between the roots of $ P(x)$ and $ P_k(x)$?
+		\item Repeat the same exercise for the polynomial $ x^3 - 3x^2 + 3x - 1$.
+	\end{enumerate}
+\end{questions}
+
+
+
+
+
+\newpage
+\subsection{Graphing the cubic}
+From now on we'll assume that our cubic is of the form:
+\begin{align}
+	P(x) = x^3 + px + q
+\end{align}
+We'll further assume $ p < 0$ for simplicity. Such a cubic is sadly called a \textbf{depressed cubic}. With roots $ \beta_1, \beta_2, \beta_3$ we've the relations
+\begin{align*}
+	0  & = \beta_1 + \beta_2 + \beta_3                    \\
+	p  & = \beta_1 \beta_2 + \beta_2 \beta_3 + \beta_3\beta_1 \\
+	-q & = \beta_1 \beta_2 \beta_3                        
+\end{align*}  
+There are four possible cases for the roots.
+\begin{center}
+	\begin{tabular}{rl}
+		\textbf{Case 0} & all three roots equal                     \\
+		\textbf{Case 1} & all three roots distinct and real                   \\
+		\textbf{Case 2} & one repeated real root  \\
+		\textbf{Case 3} & two complex roots
+	\end{tabular}
+\end{center}
+
+\begin{questions}[resume]
+	\item \begin{enumerate}
+		\item Convince yourselves that these cases are mutually exclusive and that are no other possibilities. Can $ P(x)$ have no real root? Can $ P(x)$ have a repeated complex root? all three roots complex (not real)?
+		\item Case 0 is trivial, what are the roots in this case? What are $ p,q$ in this case?
+	\end{enumerate}
+\end{questions}
+\begin{questions}[resume]
+	\item Draw the (qualitatively correct) graphs of $ P(x)$ in each of the four cases.
+\end{questions}
+\begin{questions}[resume]
+	\item By analyzing the graph of $ P(x)$, determine the relationship between the roots of $P(x)$ and $ P'(x)$ for each of the three cases: Case 1 (distinct real), Case 2 (repeated real), Case 3 (complex).
+\end{questions}
+
+Each of these cases are in fact completely determined by the coefficients $ p,q$. This is because $ P'(x)$ is a friendly quadratic equation whose roots are easy to find.
+\begin{questions}[resume]
+  \item \begin{enumerate}
+  	\item Find the roots of $ P'(x)$.
+		\item Use your answers to the previous questions to determine the conditions on the coefficients $ p,q$ corresponding to the three cases.
+  \end{enumerate}
+\end{questions}
+
+Assuming you did the calculations correctly you should get conditions of the following form for some number $ \Delta$.
+\begin{align*}
+	\Delta > 0 & \implies P(x) \mbox{ has three real roots} \\
+	\Delta = 0 & \implies P(x) \mbox{ has a repeated root}   \\
+	\Delta < 0 & \implies P(x) \mbox{ has exactly one real root}   
+\end{align*}
+These are exactly the relations we had for a quadratic! 
+
+
+\newpage
+\subsection{The Discriminant of the Cubic}
+By the previous section the roots of our polynomial are distinct real, repeated or complex according to whether the value of the polynomial is -ve, 0 or +ve at the roots of it's derivative $ \sqrt {{-p}/{3}}$, or the opposite for $ -\sqrt {{-p}/{3}}$.
+
+\begin{questions}[resume]
+  \item Simplify the condition $$P \left(\sqrt {{-p}/{3}}\right)= 0$$ to the form $ -4p^3 - 27q^2 = 0$. Similar simplifications are possible for the conditions $P (\sqrt {{-p}/{3}}) < 0$ and $> 0$.
+\end{questions}
+
+Using the other root $ -\sqrt {{-p}/{3}}$ we surprisingly get the \emph{exact} same conditions. Thus we've (almost) proved the following theorem.
+\begin{thm}
+	The cubic $ P(x) = x^3 + px + q$ has distinct real, repeated, or complex roots, according to whether the \textbf{discriminant} of $ P(x)$ $$ \Delta = -4p^3 - 27q^2$$ is positive, 0 or negative. 
+\end{thm}
+
+
+\begin{questions}[resume]
+  \item Determine whether the following polynomials have distinct real, repeated or complex roots. 
+	\begin{enumerate}
+		\item $ x^3 + 1$
+		\item $ x^3 - 1$
+		\item $ x^3 - 3x + 2 $
+		\item $ x^3 - 3x + 1 $
+		\item (optional) $x^3 + 3x^2 + 1$
+	\end{enumerate}
+\end{questions}
+
+\begin{questions}[resume]
+	\item \begin{enumerate}
+		\item What is the value of $ q$ for which $ x^3 -3x + q$ has distinct real roots, repeated roots, and complex roots respectively.
+		\item In the case when $ x^3 - 3x + q$ has repeated roots, find the roots.
+	\end{enumerate}
+\end{questions}
+
+
+
+
+
+
+\newpage
+\subsection{The Roots \& the Discriminant}
+As in the case of a quadratic $\left( b^2 - 4c = (\alpha_1 - \alpha_2)^2 \right)$ there is a surprising relation between $ \Delta$ and the roots $ \beta_1, \beta_2, \beta_3$. 
+
+\begin{thm}
+\label{thm:discriminant}
+	\begin{align*}
+		-4p^3 - 27q^2 = (\beta_1 - \beta_2)^2(\beta_2 - \beta_3)^2(\beta_3 - \beta_1)^2 
+	\end{align*}
+\end{thm}
+
+The proof of this theorem is very cumbersome, we'll only verify it for some cases.
+\begin{questions}[resume]
+	\item 
+	\begin{enumerate}
+		\item Argue directly that
+		\begin{align*}
+			P(x) \mbox{ has distinct real roots} & \Rightarrow  (\beta_1 - \beta_2)^2(\beta_2 - \beta_3)^2(\beta_3 - \beta_1)^2 > 0\\
+			 P(x) \mbox{ has a repeated root}  & \Rightarrow  (\beta_1 - \beta_2)^2(\beta_2 - \beta_3)^2(\beta_3 - \beta_1)^2 = 0
+		\end{align*}
+	\item For the complex roots case, assume that $ \beta_1$ is real and, $ \beta_2 $ and $ \beta_3$ are complex. Show that 
+		\begin{align*}
+			\beta_2 = -\beta_1/2 + i \beta' \mbox{ and } \beta_2 = -\beta_1/2 - i \beta'
+		\end{align*}
+		for some real number $ \beta'$. Prove that in this case
+		\begin{align*}
+		  (\beta_1 - \beta_2)^2(\beta_2 - \beta_3)^2(\beta_3 - \beta_1)^2 < 0
+		\end{align*}	
+	\end{enumerate}
+\end{questions}
+
+
+
+\begin{questions}[resume]
+	\item For $ \beta_1 = 0$, $\beta_2 = 1$, $\beta_3 = -1$,
+	\begin{enumerate}
+		\item Compute $(\beta_1 - \beta_2)^2(\beta_2 - \beta_3)^2(\beta_3 - \beta_1)^2$.
+		\item Compute the coefficients $ p,q$ of the polynomial $ P(x) = (x - \beta_1)(x - \beta_2)(x - \beta_3)$. 
+		\item Compute $-4p^3 - 27q^2$.
+	\end{enumerate}
+\end{questions}
+
+\begin{questions}[resume]
+  \item (optional) If you're feeling ambitious prove Proposition \ref{thm:discriminant} by expanding and simplifying the left and the right hand sides.
+\end{questions}
+
+
+
+
+
+
+\newpage
+\subsection{Symmetries \& the Discriminant}
+
+There are generalizations of \ref{thm:discriminant} for all degrees i.e. we can always express ``the product of the squares of pairwise differences of roots'' as a polynomial in the coefficients. 
+
+The coefficients satisfy the equations 
+\begin{align*}
+	0  & = \beta_1 + \beta_2 + \beta_3                    \\
+	p  & = \beta_1 \beta_2 + \beta_2 \beta_3 + \beta_3\beta_1 \\
+	-q & = \beta_1 \beta_2 \beta_3                        
+\end{align*}  
+The right hand sides of these equations are called \textbf{elementary symmetric polynomials} (a symmetric polynomial is a multivariable polynomial which remains unchanged if we permute the $\beta_i$'s). They are called \emph{elementary} because of the following theorem.
+
+\begin{thm}[Fundamental Theorem of Symmetric Polynomials]
+	Every symmetric polynomial can be expressed uniquely as a polynomial in the elementary symmetric ones.
+\end{thm}
+
+This theorem is surprisingly easy to prove once you know your induction well. Try the next problem to get an idea of how the proof of this theorem goes in general.
+\begin{questions}[resume]
+	\item 
+	\begin{enumerate}
+		\item Express $ \beta_1^2 + \beta_2^2 + \beta_3^2$ in terms of $ p,q$. \hint{Expand $(\beta_1 + \beta_2 + \beta_3)^2$.}
+		
+		\item Why is the expression $ \beta_1^2 \beta_2 + \beta_2^2 \beta_3  + \beta_3^2 \beta_1 $ not symmetric? What terms can you add to it to make it symmetric. Express the resulting polynomial in terms of $ p,q$. \hint{Expand $(\beta_1 + \beta_2 + \beta_3)(\beta_1 \beta_2 + \beta_2 \beta_3 + \beta_3\beta_1)$}
+	\end{enumerate}
+\end{questions}
+
+
+The discriminant $(\beta_1 - \beta_2)^2(\beta_2 - \beta_3)^2(\beta_3 - \beta_1)^2$ is also symmetric in $ \beta_1, \beta_2, \beta_3$ (do you see why?) and hence can be written as a polynomial in the elementary symmetric ones, which turns out to be $-4p^3 - 27q^2$.\\
+
+ This is the simplest connection between symmetries and polynomials. Galois' insight involved studying polynomials with \emph{fewer} symmetries.
+
+
+
+
+
+
+
+
+
+

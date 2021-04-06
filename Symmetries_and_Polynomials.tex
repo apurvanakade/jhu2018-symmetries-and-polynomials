@@ -1,0 +1,174 @@
+%!TEX root = index.tex
+\section{Symmetries \& Polynomials}
+
+\epigraph{Out of nothing I have created a strange new universe.}{Janos Bolyai}
+
+
+
+We need one last definition, that of a normal subgroup, to understand the Galois' ideas using the language of group theory. 
+
+\subsection{Cycle decomposition and Normality}
+Every permutation naturally breaks up as cycles. For example $ (3 \: 4 \: 1 \: 5 \: 2) \in S_5$ breaks up as,
+\begin{align*}
+  (3 \: 4 \: 1 \: 5 \: 2) \rightsquigarrow 1 \mapsto 3 \mapsto 1 \mbox{ and } 2 \mapsto 4 \mapsto 5 \mapsto 2 
+\end{align*}
+We say that $ (3 \: 4 \: 1 \: 5 \: 2)$ has a \textbf{cycle decomposition} $[1 \: 3] [2 \: 4 \: 5]$ and \textbf{cycle type} $2 + 3$. The order of the cycles and of the elements within the cycles is not relevant. We can rewrite the above permutation as having a cycle decomposition $[4 \: 5 \: 2][1 \: 3] $ and cycle type $3 + 2$. 
+
+{The cycle decomposition is the more common way of writing permutations, but it is harder to multiply two permutations when they're written in the cycle notation and needs some getting used to.}
+
+\begin{questions}
+  \item Determine cycle decompositions and cycle types of all the elements of $ S_3$.
+  \item 
+  \label{ques:s4}
+  What are the possible cycle types for elements in $ S_4$? How many elements are there in each cycle type (this is a long problem, patience is the key here).
+\end{questions}
+
+\noindent A subgroup $ G \subseteq S_n$ is called \textbf{normal} if it satisfies the following property:
+ 
+if it contains one element of a certain cycle type then it contains \emph{all} the elements of that cycle type.
+
+
+\begin{questions}[resume]
+  \item Determine which of the subgroups of $ S_3$ are normal.\footnote{Just so that we're all on the same page $ S_3$ has 6 subgroups: $ \{ e \}$, $ \{ e, (1 \: 3 \: 2) \}$, $ \{ e,  (3 \: 2 \: 1) \}$, $ \{ e, (2 \: 1 \: 3) \}$, $ \{ e,  (2 \: 3 \: 1),  (3 \: 1 \: 2) \}$, and $ S_3$ itself.}
+  
+  \item 
+  \begin{enumerate}
+    \item Find the cycle type of $ e \in S_n$.
+    \item What other elements of $ S_n$ have the same cycle type as $ e$?
+    \item Argue that the trivial group is a normal subgroup of $ S_n$. (Also note that $ S_n$ itself is a normal subgroup.)
+  \end{enumerate}
+\end{questions}
+
+
+
+
+
+
+
+
+\newpage
+\subsection{Normal subgroups of $ S_n$}
+Suppose a permutation $ \sigma \in S_n$ has a cycle type $ a_1 + a_2 + \cdots + a_k$ then we say that $ \sigma$ is an \textbf{even permutation} if $ (a_1 - 1) + (a_2 - 1) + \cdots + (a_k - 1)$ is even, \textbf{odd} otherwise. This is also called the \textbf{parity} of the permutation. 
+
+For example, $ \sigma = (3 \: 4 \: 1 \: 5 \: 2)$ has cycle type $ 2 + 3$ and $ (2 - 1) + (3 - 1) = 1 + 2 = 3$ is odd, hence the parity of $(3 \: 4 \: 1 \: 5 \: 2)$ is an odd permutation.
+
+\begin{questions}[resume]
+  \item 
+  \begin{enumerate}
+    \item Determine which permutations of $ S_3$ are even and which ones are odd.
+    \item Determine which cycle types of $ S_4$ correspond to even permutations and which ones to odd permutations, hence count the number of even and odd permutations in $ S_4$.
+    \item What is the parity of the identity $ e = (1 \: 2 \: \cdots \: n) \in S_n$?
+  \end{enumerate}
+\end{questions}
+As it turns out the subset containing all the even permutations forms a normal subgroup of $ S_n$, denoted $A_n$, called the \textbf{alternating group} and has size $ n!/2$. (We'll assume this fact.)
+
+\begin{questions}[resume]
+  \item 
+  \begin{enumerate}[resume]
+      \item What is the subgroup $ A_3$?
+      \item What is the subgroup $ A_4$? Have you encountered this subgroup before?
+  \end{enumerate}
+\end{questions}
+
+$ A_n$ is the only true friend $ S_n$ has.
+\begin{thm}
+  Every $ S_n$, for $ n>4$, has exactly 3 normal subgroups $ \{e \}$, $ A_n$ and $ S_n$
+\end{thm}
+There is no deep reason why this theorem is true, it is simply a matter a computing the normal subgroups carefully. This is a recurring phenomenon in group theory, seemingly elementary mathematical objects have very structured symmetric groups, and these then give rise to very beautiful and deep mathematics.
+
+
+
+
+\newpage
+\subsection{Normal subgroups of $ S_4$}
+By direct computations we can find all the normal subgroups of $ S_4$. We'll need the following theorem about subgroups.
+\begin{thm}
+  The size of a subgroup divides the size of the total group.
+\end{thm}
+
+\begin{questions}[resume]
+  \item \begin{enumerate}
+    \item Verify the above theorem for $ S_3$.
+    \item Verify the above theorem for $ \{ e \}, A_4, S_4$, as subgroups of $ S_4$. 
+    \item Verify the above theorem of the dihedral groups $ D_{2n}$ which are subgroups of $ S_n$.
+  \end{enumerate}
+\end{questions}
+
+We already know 3 subgroups of $ S_4$: $ \{ e \}, A_4, S_4$. Turns out there is exactly one more called the \textbf{Klein 4-group}, denoted $ K_4$.
+\begin{questions}[resume]
+  \item \begin{enumerate}
+    \item What are the possible sizes of subgroups of $ S_4$?
+    \item Show that $ S_4$ has exactly 4 normal subgroups: $ \{ e \}, K_4, A_4, S_4$.
+    
+     (You'll need to use the number of elements in each cycle type of $ S_4$ that you've already computed in \ref{ques:s4} Remember that if a normal subgroup contains one element of a certain cycle type then it must contain all the elements with that cycle type.)
+  \end{enumerate}
+\end{questions}
+
+This is the fortunate accident that allows us to solve the quartic. This does not occur for any other $ S_n$.
+
+
+
+
+
+
+\newpage
+\subsection{The Cubic and the Quartic}
+We'll now return to polynomials and understand our methods using the language of symmetric groups.
+
+The symmetry groups $ S_n$ naturally acts on a set of $ n$ variables, but more importantly it also acts on the set of all polynomials in $ n$ variables. For example, the permutation $ (1 \: 3 \: 2)$ sends $ \beta_1 \beta_2^2 +  \beta_3 $ to $ \beta_1 \beta_3^2 +  \beta_2 $. Let us go back to the cubic and quartic and analyze them using this new language.\\
+
+
+Recall that we had the following intermediate variables for the cubic
+  \begin{align*}
+    \sqrt{\Delta} = (\beta_1 -\beta_2)(\beta_2 - \beta_3)(\beta_3 - \beta_1) \mbox{ and } -\sqrt{\Delta} = (\beta_2 -\beta_1)(\beta_3 - \beta_2)(\beta_1 - \beta_3)
+  \end{align*}
+
+\begin{questions}[resume]
+  \item \begin{enumerate}
+  \label{ques:cubic}
+    \item Identify the \emph{subgroup} of $ S_3$ that fixes \emph{both} $\sqrt{\Delta} $ and $-\sqrt{\Delta}$.
+    \item What is the subgroup of $ S_3$ that fixes all the symmetric variables corresponding to the coefficients: $ \beta_1 \beta_2 \beta_3$, $\beta_1 \beta_2 + \beta_2 \beta_3 + \beta_3 \beta_1$, and $\beta_1 + \beta_2 + \beta_3$.
+    \item What is the subgroup of $ S_3$ that fixes the individual variables $\beta_1 , \beta_2,  \beta_3 $.
+  \end{enumerate}
+  This problem generalizes to all $ n$.
+\end{questions}
+
+Similarly we had the following intermediate variables for the quartic
+  \begin{align*}
+    \lambda_1 = \gamma_1 \gamma_2 + \gamma_3 \gamma_4 
+    \mbox{ and } \lambda_2 = \gamma_1 \gamma_3 + \gamma_2 \gamma_4
+    \mbox{ and } \lambda_3 = \gamma_1 \gamma_4 + \gamma_2 \gamma_3 
+  \end{align*}
+
+\begin{questions}[resume]
+  \item 
+  \label{ques:quartic}
+Identify the \emph{subgroup} of $ S_4$ that fixes \emph{all} the elements $ \lambda_1, \lambda_2, \lambda_3$. 
+\end{questions}
+
+Notice that all the groups you've computed above are normal subgroups. 
+
+\newpage 
+\noindent \textbf{Galois correspondence: } Galois' theorem states that there is a one-to-one correspondence between (sequence of) \emph{intermediate variables}\footnote{We need the concept of a \emph{field} to make this more precise.} in the roots of polynomials of degree $ n$ and (sequence of) normal subgroups of $ S_n$. As mentioned earlier a {general} polynomial can be solved by radicals only if there exists (sequence of) intermediate variables of lower degrees.
+
+For any $ S_n$ the correspondence is
+\begin{align*}
+  \{ e \} & \leftrightarrow  \mbox{ roots }   \\
+  A_n & \leftrightarrow \{ +\sqrt{\Delta}, -\sqrt{\Delta} \} \\
+  S_n & \leftrightarrow \mbox{ coefficients }
+\end{align*}
+
+
+For $ S_3$ this correspondence is enough as we've already seen that $ \mu_1^3, \mu_2^3$ could be expressed in terms of $ \pm \sqrt{\Delta} $, and it is possible to recover the roots from these.\\
+
+For $ S_n, n \ge 4$ knowing $ \{ +\sqrt{\Delta}, -\sqrt{\Delta} \} $ is not enough to recover the roots.\\
+
+However we get lucky for $ S_4$, as $ S_4$ has a special normal subgroup $ K_4$ and the variables $ \{ \lambda_1, \lambda_2, \lambda_3 \}$ corresponding to this normal subgroup do indeed satisfy a lower degree (cubic) polynomial and the roots can be recovered from these.
+\begin{align*}
+  K_4 & \leftrightarrow \{ \lambda_1, \lambda_2, \lambda_3 \}
+\end{align*}
+
+But because $ S_5$ does not have this accidental normal subgroup, there are not enough intermediate variables which could allow us to find a general formula using radicals. This then is the underlying reason why a quintic polynomial cannot be solved using radicals: as $ S_5$ has very few normal subgroups!!!\footnote{A more precise statement is that $ A_5$ has no normal subgroups.}\\
+
+\noindent \textbf{For further reading:} If you're interested in learning more about this you should start by some group theory in more details. One of my favorite algebra book for beginners is \emph{Algebra}, by Michael Artin.
+

@@ -1,0 +1,116 @@
+%!TEX root = index.tex
+
+\documentclass[reqno, 12pt, letter]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\usepackage{epigraph}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{mdframed}
+
+\usepackage{enumitem}
+\setlist[enumerate,1]{label={\alph*)}}
+
+\usepackage{color}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{ Apurva Nakade}
+\rhead{Symmetries \& Polynomials}
+\renewcommand*{\thepage}{\small\arabic{page}}
+
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{\tiny{{Hint:} #1\hfill}}}}
+
+
+\usepackage{enumitem}
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., leftmargin=2\parindent}
+
+%for setting the equation number to sync with the theorem numbers
+\numberwithin{equation}{section}
+
+
+%Real numbers, complex numbers, etc.
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\renewcommand{\P}{\mathbb{P}}
+
+\renewcommand{\O}{\mathcal{O}}
+\renewcommand{\L}{\mathcal{L}}
+\renewcommand{\H}{\mathcal{H}}
+
+
+%How does latex not have these?
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\maps}{Maps}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Exists}{\exists}
+\DeclareMathOperator{\Forall}{\forall}
+
+
+
+%simple operators which can be pretty useful
+\newcommand{\pr}[2][\:]{\frac{\partial #1}{\partial #2}}
+\newcommand{\innerp}[2]{\langle #1, #2 \rangle}
+\newcommand*\conj[1]{\overline{#1}}
+\newcommand*\mean[1]{\overline{#1}}
+
+
+
+
+%Environments: Usually the standard environments are sufficient
+%If not this is how you define custom ones
+
+%\renewenvironment{proof}{ {\bfseries Proof:}}{\qed}
+
+\newtheoremstyle{mytheorem}%                % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {\itshape}%                                     % Body font
+  {0em}%                                     % Indent amount
+  {\bfseries}%                            % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {}%                                     % Theorem head spec (can be left empty, meaning `normal')
+
+\theoremstyle{mytheorem}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+
+
+\newtheoremstyle{mydefinition}%                % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {}%                                     % Body font
+  {0em}%                                     % Indent amount
+  {\bfseries}%                            % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {}%                                     % Theorem head spec (can be left empty, meaning `normal')
+
+\theoremstyle{mydefinition}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{example}[thm]{Example}
+\newtheorem{remark}[thm]{Remark}
+% \newtheorem{ques}[thm]{Q.}
+% \newtheorem*{ques}{Q.}
+\newtheorem{ans}[thm]{Ans.}
+% \newtheorem*{ans}{Ans}

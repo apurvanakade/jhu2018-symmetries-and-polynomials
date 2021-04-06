@@ -1,0 +1,115 @@
+%!TEX root = index.tex
+\section{Symmetry groups}
+
+\epigraph{Mathematics is the art of giving the same name to different things.}{Henri Poincare}
+
+
+
+
+
+\subsection{Multiplying permutations}
+Let $ [n]$ denote the set $ \{1, 2, \ldots, n \} $. The \textbf{symmetry group of $ n$ elements}, $ S_n$, is defined to be the set of all permutations of $ n$ elements. We think of the permutations as \emph{functions} $ [n] \rightarrow [n]$.  For example, the element $ \sigma = (1 \: 2 \: 4 \: 3)$ denotes the function $ \sigma: [4] \rightarrow [4]$ which sends $ \sigma(1) = 1, \sigma(2) = 2, \sigma(3) = 4, \sigma(4) = 3$,
+  \begin{align*}
+    1 & \mapsto 1 \\
+    2 & \mapsto 2 \\
+    3 & \mapsto 4 \\
+    4 & \mapsto 3 
+  \end{align*}
+This simple change in perspective now allows us to \textbf{multiply} two permutations, by simply composing the corresponding functions. For example, the element $ \sigma = (1 \: 2 \: 4 \: 3)$ and $ \tau = (4 \: 1 \: 2 \: 3)$ the \emph{product} $ \sigma \cdot \tau = (4 \: 1 \: 3 \: 2)$ 
+  \begin{align*}
+    1 & \mapsto^\sigma 1  \mapsto^\tau 4 \\
+    2 & \mapsto^\sigma 2  \mapsto^\tau 1 \\
+    3 & \mapsto^\sigma 4  \mapsto^\tau 3 \\
+    4 & \mapsto^\sigma 3  \mapsto^\tau 2
+  \end{align*}
+Note that this is like \emph{applying} $ \sigma$ to $ \tau$.
+
+\begin{questions}
+  \item For $ e = (1 \: 2), \tau = (2 \: 1) \in S_2$ compute: $ e \cdot e, e \cdot \tau, \tau \cdot e, \tau \cdot \tau$
+\end{questions}
+
+\begin{questions}[resume]
+  \item For $ \sigma = (2 \: 3 \: 1), \tau = (2 \: 1 \: 3) \in S_3$ compute 
+  \begin{enumerate}
+    \item $ \sigma \cdot \sigma$, $ \sigma \cdot \sigma \cdot \sigma$
+    \item $ \sigma \cdot \tau$, $ (\sigma \cdot \tau) \cdot (\sigma \cdot \tau)$
+    \item $ \tau \cdot \sigma$
+    \item Write all the elements of $ S_3$ in terms of $ \sigma$ and $ \tau$.
+  \end{enumerate}
+  Because $\sigma \cdot \tau \neq \tau \cdot \sigma$ we say that $ S_3$ is \textbf{non-abelian}.
+\end{questions}
+
+
+
+
+
+\newpage
+\subsection{Subgroups}
+\begin{questions}[resume]
+  \item Let $ e = (1 \: 2 \: 3 \: \cdots \: n) \in S_n$. Let $ \sigma $ be any permutation in $ S_n$.
+  \begin{enumerate}
+    \item Compute $ e \cdot \sigma$ and $ \sigma \cdot e$.
+    \item Find an element $ \tau$ such that $ \tau \cdot \sigma = e$ and $ \sigma \cdot \tau = e$.
+  \end{enumerate}
+  Hence $ e$ is called the (group) \textbf{identity} in $ S_n$ and $ \tau = \sigma^{-1}$ is called the \textbf{inverse} of $ \sigma$.
+  \begin{enumerate}[resume]
+    \item Explicitly find the inverses of all the elements of $ S_3$.
+  \end{enumerate}
+\end{questions}
+A set with (associative)  multiplication, an identity, and inverses is called a \textbf{group}.
+
+A subset $ G \subseteq S_n$ which is itself a group is called a \textbf{subgroup} of $ S_n$ i.e. $ G$ is a subgroup of $ S_n$ if 
+\begin{itemize}
+  \item (contains identity) $ e \in G$
+  \item (closed under inverses) $ g \in G \implies g^{-1} \in G$
+  \item (closed under multiplication) $ g,h \in G \implies g \cdot h \in G$
+\end{itemize}
+
+\begin{questions}[resume]
+  \item Show that $\{e\}$ is a subgroup of any $ S_n$. This is called the \textbf{trivial group}.
+  \item  Let $ \sigma = (3 \: 1 \: 2), \tau = (2 \: 1 \: 3) \in S_3$.
+  \begin{enumerate}
+    \item Show that $\{e, \tau\}$ is a subgroup of $ S_3$.
+    \item What element(s) do you need to add to $ \{ e, \sigma\}$ to make it a subgroup  of $ S_3$?
+    \item What element(s) do you need to add to $ \{ e, \tau, \sigma\}$ to make it a subgroup of $ S_3$?
+  \end{enumerate}
+  \item List all the subgroups of $ S_3$.
+
+  \item For $ \sigma = (2 \: 3 \: \cdots \: n \: 1) \in S_n$,
+  \begin{enumerate}
+    \item Find $ \sigma^k$.
+    \item Find $ \sigma^{-1}$.
+    \item What are the elements that needs to be added to the set $ \{ e , \sigma \} \subseteq S_n$ to make it a subgroup?
+  \end{enumerate}  
+\end{questions}
+
+
+
+
+
+\newpage
+\subsection{Group Actions}
+Groups naturally occur as symmetries of mathematical objects, $ S_n$ is the symmetry group of a set of $ n$ elements. But the same group can show up as the symmetries of multiple objects. We think of the group as \textbf{acting} on the object via some self-transformations. \\
+
+For example, $ S_3$ \emph{acts} an equilateral triangle with vertices labelled $ \{ 1,2,3 \}$ via geometrical transformations (rotations and reflections): $ \sigma = (2 \: 1 \: 3)$ \emph{acts} via rotating the triangle counterclockwise by $ 2\pi/3$ and $ \tau = (2 \: 1 \: 3)$ \emph{acts} via reflecting along one of the bisectors. On the other hand $ S_3$ does not act naturally on, say, an isosceles triangle, in this case the natural symmetry group is $ S_2$ which acts by reflecting along \emph{the} bisector. For a scalene triangle, the natural symmetry group is the trivial group.
+
+\begin{questions}[resume]
+  \item \begin{enumerate}
+    \item How many geometrical transformations are there of a square?
+    \item $ S_4$ does not act naturally on a square. What is an example of an element of $ S_4$ which does not correspond to any geometrical transformation?
+    \item What is the \emph{subgroup} of $ S_4$ that acts via geometrical transformations?
+  \end{enumerate}
+  
+  \item Generalize the above problem to a regular $ n$-gon. These groups are called the \textbf{dihedral groups}, denoted $ D_{2n}$. (why $ 2n$?)
+
+  \item If we restrict only to rotations and do not allow reflections, then $ S_4$ does not naturally act on a tetrahedron.
+  \begin{enumerate}
+    \item What is an example of an element of $ S_4$ which does not correspond to any rotation of the tetrahedron?
+    \item Describe how the other elements of $ S_4$ act on the tetrahedron.
+    \item How many rotational symmetries does the tetrahedron have? What is the rotational symmetry group? 
+  \end{enumerate}
+\end{questions}
+
+The rotational symmetry group of a cube is also extremely interesting and easy to understand, try reading about it online.
+
+  
